@@ -4,6 +4,7 @@ const app = express();
 const hbs = require('hbs');
 const geoCode = require('../src/utils/geoCode');
 const weatherInfo = require('../src/utils/getWeatherInfo');
+const port = process.env.PORT || 3000
 
 // Define Paths for Express config
 const publicDir = path.join(__dirname, '../public')
@@ -96,6 +97,6 @@ app.get('*', (req, res) => {
         name: "Siba Panda"
     })
 })
-app.listen(3000, () => {
-    console.log('The server is Running on port 3000');
+app.listen(port, () => {
+    console.log('The server is Running on port ',port);
 });
